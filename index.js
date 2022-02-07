@@ -1,8 +1,11 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
+
+const uri = process.env.MONGODB_URI;
 
 app.get("/", (req, res) => {
   return res.json({
